@@ -3,7 +3,7 @@
 </script>
 
 <div class="columns is-vcentered">
-    <div class="column is-two-thirds">
+    <div class="column is-half">
         <TitleBar title={'Wild Swimming'}/>
     </div>
     <div class="column">

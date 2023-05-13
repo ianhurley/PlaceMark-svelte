@@ -3,7 +3,7 @@ import axios from "axios";
 import { user } from "../stores";
 
 export const placemarkService = {
-    baseUrl: "http://127.0.0.1:4000",
+    baseUrl: "http://localhost:4000",
 
     async login(email, password) {
         try {
@@ -59,5 +59,71 @@ export const placemarkService = {
             });
             axios.defaults.headers.common["Authorization"] = "Bearer " + savedUser.token;
         }
-    }
+    },
+    // working for all
+    async getAllSwimlists() {
+        try {
+            const response = await axios.get(this.baseUrl + "/api/swimlists");
+            return response.data;
+        } catch (error) {
+            console.log(error);
+            return [];
+        }
+    },
+
+    // working for all spots
+    async getAllSpots() {
+        try {
+            const response = await axios.get(this.baseUrl + "/api/spots");
+            return response.data;
+        } catch (error) {
+            return [];
+        }
+    },
+
+    //Test by user??
+    async getUserSwimlists() {
+        try {
+            const response = await axios.get(this.baseUrl + "/api/swimlists", {
+                headers: {
+                    Authorization: `Bearer ${user.token}`
+                }
+            });
+            return response.data;
+        } catch (error) {
+            console.log(error);
+            return [];
+        }
+    },
+    
+    
+    //Test by ID
+    async getSwimlist(id) {
+        try {
+            const response = await axios.get(`${this.baseUrl}/api/swimlists/${id}`);
+            return response.data;
+        } catch (error) {
+            console.log(error);
+            return [];
+        }
+    },
+
+    
+
+    // not yet working
+    async addSpot(spot) {
+        try {
+            const response = await axios.post(this.baseUrl + "/api/swimlists/" + spot.swimlistid + "/spots", spot);
+            return response.status == 200;
+        } catch (error) {
+            return false;
+        }
+    },
+
+    // alternative
+    async createSpot(id, spot) {
+        const response = await axios.post(`${this.baseUrl}/api/swimlists/${id}/spots`, spot);
+        return response.data;
+    }, 
+    
 };
