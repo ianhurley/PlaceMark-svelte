@@ -5,16 +5,16 @@
 
 <style>
     .box {
-        min-height: 100px;
+        height: 125px;
     }
 </style>
 
-<div class="box has-text-centered columns m-5">
+<div class="box has-text-centered columns m-1">
     <div class="column">
-        <i style="font-size: 45px; color: Dodgerblue;" class="fa-solid fa-person-swimming"></i>
+        <i style="font-size: 75px; color: Dodgerblue;" class="fa-solid fa-person-swimming"></i>
     </div>
     <div class="column">
-        <div class="title is-10">{title}</div>
+        <div class="title is-4">{title}</div>
     </div>
     <div class="column">
         <i style="font-size: 45px; color: Dodgerblue;" class="fa-solid fa-water" />

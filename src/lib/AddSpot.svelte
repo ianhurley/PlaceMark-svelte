@@ -7,8 +7,8 @@
     
         let name = "";
         let county = "";
-        let latitude = "";
-        let longitude = "";
+        let latitude = 0;
+        let longitude = 0;
         let categorey = "";
         let swimList = [];
 

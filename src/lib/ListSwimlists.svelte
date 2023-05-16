@@ -2,7 +2,7 @@
   // @ts-nocheck
   import { onMount } from "svelte";
   import { placemarkService } from "../services/placemark-service";
-  import { user } from "../stores.js";
+  import { user } from "../stores";
 
   let swimlists = [];
 
@@ -17,9 +17,9 @@
 </script>
 
 <main>
-  <ul>
+  <ul class="is-justify-content-space-between">
     {#each swimlists as swimlist}
-    <div class="box box-link-hover-shadow">
+    <div class="box box-link-hover-shadow m-1">
       <h2 class="title">
       <li>{swimlist.title}</li>
       </h2>

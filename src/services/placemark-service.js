@@ -60,13 +60,13 @@ export const placemarkService = {
             axios.defaults.headers.common["Authorization"] = "Bearer " + savedUser.token;
         }
     },
-    // working for all
+    
+    // working for all swimlists
     async getAllSwimlists() {
         try {
             const response = await axios.get(this.baseUrl + "/api/swimlists");
             return response.data;
         } catch (error) {
-            console.log(error);
             return [];
         }
     },
@@ -83,24 +83,30 @@ export const placemarkService = {
 
     //Test by user??
     async getUserSwimlists() {
+        const token = user.get().token;
+        const response = await axios.get(this.baseUrl + "/api/swimlists", {
+            headers: {
+                Authorization: 'Bearer ' + token
+            }
+        });
+        return response.data;
+    },
+    
+    //Test by ID
+    async getSwimlist(id) {
         try {
-            const response = await axios.get(this.baseUrl + "/api/swimlists", {
-                headers: {
-                    Authorization: `Bearer ${user.token}`
-                }
-            });
+            const response = await axios.get(`${this.baseUrl}/api/swimlists/${id}`);
             return response.data;
         } catch (error) {
             console.log(error);
             return [];
         }
     },
-    
-    
+
     //Test by ID
-    async getSwimlist(id) {
+    async getSwimlistId(id) {
         try {
-            const response = await axios.get(`${this.baseUrl}/api/swimlists/${id}`);
+            const response = await axios.get(this.baseUrl + "/api/swimlists/" + id);
             return response.data;
         } catch (error) {
             console.log(error);

@@ -1,6 +1,6 @@
 <style>
     .box {
-        min-height: 125px;
+        height: 125px;
     }
 </style>
 
