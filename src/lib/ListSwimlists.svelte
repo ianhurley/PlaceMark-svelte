@@ -3,6 +3,7 @@
   import { onMount } from "svelte";
   import { placemarkService } from "../services/placemark-service";
   import { user } from "../stores";
+  // import UploadWidget from '$lib/components/uploadwidget.svelte'
 
   let swimlists = [];
 

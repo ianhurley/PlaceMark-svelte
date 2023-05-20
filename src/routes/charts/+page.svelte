@@ -2,8 +2,8 @@
     // @ts-nocheck
     import Header from '$lib/Header.svelte';
     import MainNavigator from '$lib/MainNavigator.svelte';
-    import SpotByChart from '$lib/SpotByChart.svelte';
-    import SwimlistByChart from '$lib/SwimlistByChart.svelte';
+    import SpotCategoreyByChart from '$lib/SpotCategoreyByChart.svelte';
+    import SpotCountyByChart from '$lib/SpotCountyByChart.svelte';
 </script>
 
 <Header>
@@ -12,9 +12,9 @@
 
 <div class="columns">
     <div class="column box has-text-centered is-fullheight">
-        <SpotByChart />
+        <SpotCategoreyByChart />
     </div>
     <div class="column box has-text-centered is-fullheight">
-        <SwimlistByChart />
+        <SpotCountyByChart />
     </div>
 </div>

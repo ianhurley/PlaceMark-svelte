@@ -2,7 +2,7 @@
   import Header from '$lib/Header.svelte';
   import MainNavigator from '$lib/MainNavigator.svelte';
   import ListSwimlists from '$lib/ListSwimlists.svelte';
-  import SpotByChart from '$lib/SpotByChart.svelte';
+  import SpotCategoreyByChart from '$lib/SpotCategoreyByChart.svelte';
  
 </script>
 
@@ -15,6 +15,6 @@
     <ListSwimlists />
   </div>
   <div class="column box has-text-centered">
-    <SpotByChart />
+    <SpotCategoreyByChart />
   </div>
 </div>

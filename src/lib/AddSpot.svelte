@@ -7,9 +7,10 @@
     
         let name = "";
         let county = "";
-        let latitude = 0;
-        let longitude = 0;
+        let latitude = "";
+        let longitude = "";
         let categorey = "";
+        
         let swimList = [];
 
         let message = "Add Swim Spot";
@@ -20,6 +21,8 @@
     
       async function createSpot() {
         if (name && county && latitude && longitude && categorey) {
+          //const region = 
+          //const swimlist = swimList.find((swimlist) => swimlist.title == swimList[0]);
           const spot = {
             name: name,
             county: county,
@@ -45,16 +48,20 @@
         <div class="field is-horizontal">
           <div class="field-body">
             <div class="field">
-              <input class="input is-rounded" type="text" placeholder="Name" bind:value={name}>
+              <input bind:value={name} class="input is-rounded" type="text" placeholder="Name" pattern={"^[A-Aa-z\s,]+$"} required>
+              <small class="has-text-grey">Letters, spaces and commas only</small>
             </div>
             <div class="field">
-              <input class="input is-rounded" type="text" placeholder="County" bind:value={county}>
+              <input bind:value={county} class="input is-rounded" type="text" placeholder="County" pattern={"^[A-Aa-z\s,]+$"} required>
+              <small class="has-text-grey">Letters, spaces and commas only</small>
             </div>
             <div class="field">
-              <input class="input is-rounded" type="text" placeholder="Latitude" bind:value={latitude}>
+              <input bind:value={latitude} class="input is-rounded" type="number" step="0.000001" placeholder="Latitude" pattern={"^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)$"} required>
+              <small class="has-text-grey">Valid coordinates only</small>
             </div>
             <div class="field">
-              <input class="input is-rounded" type="text" placeholder="Longitude" bind:value={longitude}>
+              <input bind:value={longitude} class="input is-rounded" type="number" step="0.000001" placeholder="Longitude" pattern={"^[-+]?([1-9]?\d(\.\d+)?|1[0-7]\d(\.\d+)?|180(\.0+)?)$"} required>
+              <small class="has-text-grey">Valid coordinates only</small>
             </div>
             <div class="field">
               <div class="control">

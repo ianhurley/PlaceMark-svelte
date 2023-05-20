@@ -119,7 +119,7 @@ export const placemarkService = {
     // not yet working
     async addSpot(spot) {
         try {
-            const response = await axios.post(this.baseUrl + "/api/swimlists/" + spot.swimlistid + "/spots", spot);
+            const response = await axios.post(this.baseUrl + "/api/swimlists/" + spot.swimlist + "/spots", spot);
             return response.status == 200;
         } catch (error) {
             return false;

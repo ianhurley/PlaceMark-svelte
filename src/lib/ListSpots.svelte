@@ -2,6 +2,7 @@
     // @ts-nocheck
     import { onMount } from "svelte";
     import { placemarkService } from "../services/placemark-service";
+    //import SpotMap from "$lib/SpotMap.svelte";
   
     let listSpots = [];
     onMount(async () => {
