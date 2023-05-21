@@ -41,7 +41,7 @@
     </div>
     <div class="field">
       <label for="password" class="label">Password</label>
-      <input bind:value={password} id="password" class="input is-rounded" type="password" placeholder="Enter Password" name="password" pattern={"^(?=.*\d).{6,}$"} required>
+      <input bind:value={password} id="password" class="input is-rounded" type="password" placeholder="Enter Password" name="password" required>
       <small class="has-text-grey">Password must contain at least one digit and have at least 6 characters.</small>
     </div>
     <div class="field is-grouped">

@@ -21,8 +21,6 @@
     
       async function createSpot() {
         if (name && county && latitude && longitude && categorey) {
-          //const region = 
-          //const swimlist = swimList.find((swimlist) => swimlist.title == swimList[0]);
           const spot = {
             name: name,
             county: county,

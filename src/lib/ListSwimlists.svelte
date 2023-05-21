@@ -3,13 +3,13 @@
   import { onMount } from "svelte";
   import { placemarkService } from "../services/placemark-service";
   import { user } from "../stores";
-  // import UploadWidget from '$lib/components/uploadwidget.svelte'
+  import UploadWidget from '$lib/components/uploadwidget.svelte'
 
   let swimlists = [];
 
   onMount(async () => {
     try {
-      swimlists = await placemarkService.getAllSwimlists();
+      swimlists = await placemarkService.getAllSwimlists(); //listing all swimlists - swimlists by user not working
       console.log(swimlists);
     } catch (error) {
       console.error(error);
@@ -29,11 +29,12 @@
         <i class="fa-regular fa-folder-open"></i>
         </span>
       </a>
-      <a href="/" class="button is-rounded">
+      <a href="/swimlist" class="button is-rounded">
         <span style="color: grey;">
         <i class="fa-regular fa-trash-can"></i>
         </span>
       </a>
+      <UploadWidget />
     </div>
     {/each}
   </ul>

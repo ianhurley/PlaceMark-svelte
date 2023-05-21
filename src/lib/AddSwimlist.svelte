@@ -1,6 +1,5 @@
 
-  <form action="/dashboard/addswimlist" method="POST">
-    <div class="field">
+  <form class="box">
     <label for="swimlist" class="label">Create Swimlist by Region:</label>
     <div class="control">
       <div class="select is-rounded is-hoverable">
@@ -13,7 +12,6 @@
         </select>
       </div>
     </div>
-  </div>
     <button class="button is-primary is-rounded">Add Region</button>
   </form>
 

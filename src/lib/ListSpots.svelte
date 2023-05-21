@@ -2,11 +2,11 @@
     // @ts-nocheck
     import { onMount } from "svelte";
     import { placemarkService } from "../services/placemark-service";
-    //import SpotMap from "$lib/SpotMap.svelte";
+    import UploadWidget from '$lib/components/uploadwidget.svelte'
   
     let listSpots = [];
     onMount(async () => {
-        listSpots = await placemarkService.getAllSpots();
+        listSpots = await placemarkService.getAllSpots(); // listing all spots - spots by user not working
     });
 </script>
 
@@ -18,6 +18,7 @@
             <th>Latitude</th>
             <th>Longitude</th>
             <th>Categorey</th>
+            <th>Photo</th>
             <th></th>
             <th></th>
         </thead>
@@ -40,14 +41,17 @@
                         {spots.categorey}
                     </td>
                     <td>
-                        <a href="/" class="button is-rounded">
+                        <UploadWidget />
+                    </td>
+                    <td>
+                        <a href="/spot" class="button is-rounded">
                           <span style="color: grey;">
                           <i class="fa-regular fa-edit"></i>
                           </span>
                         </a>
                       </td>
                       <td>
-                        <a href="/" class="button is-rounded">
+                        <a href="/spot" class="button is-rounded">
                           <span style="color: grey;">
                           <i class="fa-regular fa-trash-can"></i>
                           </span>

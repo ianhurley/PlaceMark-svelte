@@ -16,7 +16,4 @@
     <ListSpots />
     <AddSpot />
   </div>
-  <div class="column">
-    <SpotMap />
-  </div>
 </div>
