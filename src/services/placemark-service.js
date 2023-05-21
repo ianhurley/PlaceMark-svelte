@@ -3,7 +3,8 @@ import axios from "axios";
 import { user } from "../stores";
 
 export const placemarkService = {
-    baseUrl: "http://localhost:4000",
+    // baseUrl: "http://localhost:4000",
+    baseUrl: "https://wild-swimming.onrender.com",
 
     async login(email, password) {
         try {
